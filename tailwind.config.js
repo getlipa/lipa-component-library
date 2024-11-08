@@ -3,6 +3,7 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@getlipa/lipa-components-library/src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     colors: {
@@ -41,4 +42,6 @@ export default {
     },
     extend: {},
   },
+  plugins: [],
 }
+

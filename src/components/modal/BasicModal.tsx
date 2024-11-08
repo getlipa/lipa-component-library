@@ -1,5 +1,4 @@
 import {Dialog, DialogBackdrop, DialogPanel} from "@headlessui/react";
-import React from "react";
 
 export default function BasicModal({open, onClose, children}: {open: boolean; onClose: () => void; children: React.ReactNode;}) {
 

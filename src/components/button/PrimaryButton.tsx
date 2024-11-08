@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function PrimaryButton({ children, onClick }: { children: React.ReactNode; onClick: () => void }) {
 	return (
 		<button
