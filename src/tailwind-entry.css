@@ -1,0 +1,10 @@
+@layer ui {
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    .ui *{
+        all: revert;
+    }
+
+}
