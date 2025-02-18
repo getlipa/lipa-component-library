@@ -1,0 +1,102 @@
+{
+  "testSuite": "BackstopJS",
+  "tests": [
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/backstop_default_From_Zero_0_document_0_phone.png",
+        "test": "../bitmaps_test/20250218-093346/backstop_default_From_Zero_0_document_0_phone.png",
+        "selector": "document",
+        "fileName": "backstop_default_From_Zero_0_document_0_phone.png",
+        "label": "From Zero",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "http://localhost:6006/iframe.html?viewMode=story&id=test-customcomponent--from-0",
+        "expect": 0,
+        "viewportLabel": "phone",
+        "error": "Reference file not found /Users/marcojaros/Projects/TestProjects/react-vite/default-ts/backstop_data/bitmaps_reference/backstop_default_From_Zero_0_document_0_phone.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/backstop_default_From_Zero_0_document_1_tablet.png",
+        "test": "../bitmaps_test/20250218-093346/backstop_default_From_Zero_0_document_1_tablet.png",
+        "selector": "document",
+        "fileName": "backstop_default_From_Zero_0_document_1_tablet.png",
+        "label": "From Zero",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "http://localhost:6006/iframe.html?viewMode=story&id=test-customcomponent--from-0",
+        "expect": 0,
+        "viewportLabel": "tablet",
+        "error": "Reference file not found /Users/marcojaros/Projects/TestProjects/react-vite/default-ts/backstop_data/bitmaps_reference/backstop_default_From_Zero_0_document_1_tablet.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/backstop_default_From_Zero_with_hover_0_document_0_phone.png",
+        "test": "../bitmaps_test/20250218-093346/backstop_default_From_Zero_with_hover_0_document_0_phone.png",
+        "selector": "document",
+        "fileName": "backstop_default_From_Zero_with_hover_0_document_0_phone.png",
+        "label": "From Zero with hover",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "http://localhost:6006/iframe.html?viewMode=story&id=test-customcomponent--from-0",
+        "expect": 0,
+        "viewportLabel": "phone",
+        "error": "Reference file not found /Users/marcojaros/Projects/TestProjects/react-vite/default-ts/backstop_data/bitmaps_reference/backstop_default_From_Zero_with_hover_0_document_0_phone.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/backstop_default_From_Zero_with_hover_0_document_1_tablet.png",
+        "test": "../bitmaps_test/20250218-093346/backstop_default_From_Zero_with_hover_0_document_1_tablet.png",
+        "selector": "document",
+        "fileName": "backstop_default_From_Zero_with_hover_0_document_1_tablet.png",
+        "label": "From Zero with hover",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "http://localhost:6006/iframe.html?viewMode=story&id=test-customcomponent--from-0",
+        "expect": 0,
+        "viewportLabel": "tablet",
+        "error": "Reference file not found /Users/marcojaros/Projects/TestProjects/react-vite/default-ts/backstop_data/bitmaps_reference/backstop_default_From_Zero_with_hover_0_document_1_tablet.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/backstop_default_From_30_0_document_0_phone.png",
+        "test": "../bitmaps_test/20250218-093346/backstop_default_From_30_0_document_0_phone.png",
+        "selector": "document",
+        "fileName": "backstop_default_From_30_0_document_0_phone.png",
+        "label": "From 30",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "http://localhost:6006/iframe.html?viewMode=story&id=test-customcomponent--max-count-50-starting-at-30",
+        "expect": 0,
+        "viewportLabel": "phone",
+        "error": "Reference file not found /Users/marcojaros/Projects/TestProjects/react-vite/default-ts/backstop_data/bitmaps_reference/backstop_default_From_30_0_document_0_phone.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/backstop_default_From_30_0_document_1_tablet.png",
+        "test": "../bitmaps_test/20250218-093346/backstop_default_From_30_0_document_1_tablet.png",
+        "selector": "document",
+        "fileName": "backstop_default_From_30_0_document_1_tablet.png",
+        "label": "From 30",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "http://localhost:6006/iframe.html?viewMode=story&id=test-customcomponent--max-count-50-starting-at-30",
+        "expect": 0,
+        "viewportLabel": "tablet",
+        "error": "Reference file not found /Users/marcojaros/Projects/TestProjects/react-vite/default-ts/backstop_data/bitmaps_reference/backstop_default_From_30_0_document_1_tablet.png"
+      },
+      "status": "fail"
+    }
+  ],
+  "id": "backstop_default"
+}

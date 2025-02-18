@@ -27,7 +27,8 @@
     "storybook:css": "tailwindcss -w -i ./src/tailwind-entry.css -o ./src/index.css",
     "build-storybook": "concurrently 'npm run build-storybook:css' 'storybook build'",
     "build-storybook:css": "tailwindcss -m -i ./src/tailwind-entry.css -o ./src/index.css",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "chromatic": "npx chromatic --project-token=chpt_f184d3698b010c1"
   },
   "peerDependencies": {
     "react": "^19.0.0",
@@ -67,5 +68,8 @@
     "extends": [
       "plugin:storybook/recommended"
     ]
+  },
+  "dependencies": {
+    "backstopjs": "^6.3.25"
   }
 }

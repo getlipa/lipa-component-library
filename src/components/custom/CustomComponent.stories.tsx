@@ -4,7 +4,7 @@ import { CustomComponent } from './CustomComponent.tsx';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-    title: 'Hihi/CustomComponent',
+    title: 'Test/CustomComponent',
     component: CustomComponent,
     parameters: {
         layout: 'centered',
@@ -25,9 +25,6 @@ type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const From0: Story = {
-    args: {
-        initialCount: 0,
-    },
 };
 
 export const MaxCount10: Story = {
