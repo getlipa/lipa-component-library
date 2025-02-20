@@ -1,0 +1,1 @@
+export { CustomComponent } from './components/custom';
