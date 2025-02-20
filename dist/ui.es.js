@@ -14,16 +14,16 @@ function Ce() {
   if (fe) return w;
   fe = 1;
   var c = Symbol.for("react.transitional.element"), v = Symbol.for("react.fragment");
-  function f(g, i, d) {
+  function f(m, i, d) {
     var u = null;
     if (d !== void 0 && (u = "" + d), i.key !== void 0 && (u = "" + i.key), "key" in i) {
       d = {};
-      for (var x in i)
-        x !== "key" && (d[x] = i[x]);
+      for (var g in i)
+        g !== "key" && (d[g] = i[g]);
     } else d = i;
     return i = d.ref, {
       $$typeof: c,
-      type: g,
+      type: m,
       key: u,
       ref: i !== void 0 ? i : null,
       props: d
@@ -52,7 +52,7 @@ function ke() {
       switch (e) {
         case Y:
           return "Fragment";
-        case he:
+        case Te:
           return "Portal";
         case I:
           return "Profiler";
@@ -105,7 +105,7 @@ function ke() {
         ), v(e);
       }
     }
-    function g() {
+    function m() {
     }
     function i() {
       if (y === 0) {
@@ -113,7 +113,7 @@ function ke() {
         var e = {
           configurable: !0,
           enumerable: !0,
-          value: g,
+          value: m,
           writable: !0
         };
         Object.defineProperties(console, {
@@ -132,13 +132,13 @@ function ke() {
       if (y--, y === 0) {
         var e = { configurable: !0, enumerable: !0, writable: !0 };
         Object.defineProperties(console, {
-          log: T({}, e, { value: D }),
-          info: T({}, e, { value: ee }),
-          warn: T({}, e, { value: re }),
-          error: T({}, e, { value: te }),
-          group: T({}, e, { value: oe }),
-          groupCollapsed: T({}, e, { value: ne }),
-          groupEnd: T({}, e, { value: ae })
+          log: h({}, e, { value: D }),
+          info: h({}, e, { value: ee }),
+          warn: h({}, e, { value: re }),
+          error: h({}, e, { value: te }),
+          group: h({}, e, { value: oe }),
+          groupCollapsed: h({}, e, { value: ne }),
+          groupEnd: h({}, e, { value: ae })
         });
       }
       0 > y && console.error(
@@ -157,39 +157,39 @@ function ke() {
       return `
 ` + V + e + ue;
     }
-    function x(e, r) {
+    function g(e, r) {
       if (!e || z) return "";
       var t = G.get(e);
       if (t !== void 0) return t;
       z = !0, t = Error.prepareStackTrace, Error.prepareStackTrace = void 0;
       var n = null;
-      n = h.H, h.H = null, i();
+      n = T.H, T.H = null, i();
       try {
         var l = {
           DetermineComponentFrameRoot: function() {
             try {
               if (r) {
-                var _ = function() {
+                var x = function() {
                   throw Error();
                 };
-                if (Object.defineProperty(_.prototype, "props", {
+                if (Object.defineProperty(x.prototype, "props", {
                   set: function() {
                     throw Error();
                   }
                 }), typeof Reflect == "object" && Reflect.construct) {
                   try {
-                    Reflect.construct(_, []);
+                    Reflect.construct(x, []);
                   } catch (b) {
                     var k = b;
                   }
-                  Reflect.construct(e, [], _);
+                  Reflect.construct(e, [], x);
                 } else {
                   try {
-                    _.call();
+                    x.call();
                   } catch (b) {
                     k = b;
                   }
-                  e.call(_.prototype);
+                  e.call(x.prototype);
                 }
               } else {
                 try {
@@ -197,7 +197,7 @@ function ke() {
                 } catch (b) {
                   k = b;
                 }
-                (_ = e()) && typeof _.catch == "function" && _.catch(function() {
+                (x = e()) && typeof x.catch == "function" && x.catch(function() {
                 });
               }
             } catch (b) {
@@ -250,7 +250,7 @@ function ke() {
             }
         }
       } finally {
-        z = !1, h.H = n, d(), Error.prepareStackTrace = t;
+        z = !1, T.H = n, d(), Error.prepareStackTrace = t;
       }
       return s = (s = e ? e.displayName || e.name : "") ? u(s) : "", typeof e == "function" && G.set(e, s), s;
     }
@@ -258,7 +258,7 @@ function ke() {
       if (e == null) return "";
       if (typeof e == "function") {
         var r = e.prototype;
-        return x(
+        return g(
           e,
           !(!r || !r.isReactComponent)
         );
@@ -273,7 +273,7 @@ function ke() {
       if (typeof e == "object")
         switch (e.$$typeof) {
           case M:
-            return e = x(e.render, !1), e;
+            return e = g(e.render, !1), e;
           case U:
             return S(e.type);
           case q:
@@ -286,7 +286,7 @@ function ke() {
       return "";
     }
     function A() {
-      var e = h.A;
+      var e = T.A;
       return e === null ? null : e.getOwner();
     }
     function Ee(e) {
@@ -337,7 +337,7 @@ function ke() {
       }), Object.freeze && (Object.freeze(e.props), Object.freeze(e)), e;
     }
     function H(e, r, t, n, l, a) {
-      if (typeof e == "string" || typeof e == "function" || e === Y || e === I || e === F || e === $ || e === W || e === Te || typeof e == "object" && e !== null && (e.$$typeof === q || e.$$typeof === U || e.$$typeof === Z || e.$$typeof === L || e.$$typeof === M || e.$$typeof === pe || e.getModuleId !== void 0)) {
+      if (typeof e == "string" || typeof e == "function" || e === Y || e === I || e === F || e === $ || e === W || e === he || typeof e == "object" && e !== null && (e.$$typeof === q || e.$$typeof === U || e.$$typeof === Z || e.$$typeof === L || e.$$typeof === M || e.$$typeof === pe || e.getModuleId !== void 0)) {
         var o = r.children;
         if (o !== void 0)
           if (n)
@@ -406,15 +406,15 @@ React keys must be passed directly to JSX without using spread:
         ce[r] = !0;
         var t = "";
         e && e._owner != null && e._owner !== A() && (t = null, typeof e._owner.tag == "number" ? t = c(e._owner.type) : typeof e._owner.name == "string" && (t = e._owner.name), t = " It was passed a child from " + t + ".");
-        var n = h.getCurrentStack;
-        h.getCurrentStack = function() {
+        var n = T.getCurrentStack;
+        T.getCurrentStack = function() {
           var l = S(e.type);
           return n && (l += n() || ""), l;
         }, console.error(
           'Each child in a list should have a unique "key" prop.%s%s See https://react.dev/link/warning-keys for more information.',
           r,
           t
-        ), h.getCurrentStack = n;
+        ), T.getCurrentStack = n;
       }
     }
     function xe(e) {
@@ -425,8 +425,8 @@ Check the render method of \`` + t + "`."), r || (e = c(e)) && (r = `
 
 Check the top-level render call using <` + e + ">."), r;
     }
-    var _e = Re, P = Symbol.for("react.transitional.element"), he = Symbol.for("react.portal"), Y = Symbol.for("react.fragment"), F = Symbol.for("react.strict_mode"), I = Symbol.for("react.profiler"), L = Symbol.for("react.consumer"), Z = Symbol.for("react.context"), M = Symbol.for("react.forward_ref"), $ = Symbol.for("react.suspense"), W = Symbol.for("react.suspense_list"), U = Symbol.for("react.memo"), q = Symbol.for("react.lazy"), Te = Symbol.for("react.offscreen"), Q = Symbol.iterator, je = Symbol.for("react.client.reference"), h = _e.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, K = Object.prototype.hasOwnProperty, T = Object.assign, pe = Symbol.for("react.client.reference"), J = Array.isArray, y = 0, D, ee, re, te, oe, ne, ae;
-    g.__reactDisabledLog = !0;
+    var _e = Re, P = Symbol.for("react.transitional.element"), Te = Symbol.for("react.portal"), Y = Symbol.for("react.fragment"), F = Symbol.for("react.strict_mode"), I = Symbol.for("react.profiler"), L = Symbol.for("react.consumer"), Z = Symbol.for("react.context"), M = Symbol.for("react.forward_ref"), $ = Symbol.for("react.suspense"), W = Symbol.for("react.suspense_list"), U = Symbol.for("react.memo"), q = Symbol.for("react.lazy"), he = Symbol.for("react.offscreen"), Q = Symbol.iterator, je = Symbol.for("react.client.reference"), T = _e.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, K = Object.prototype.hasOwnProperty, h = Object.assign, pe = Symbol.for("react.client.reference"), J = Array.isArray, y = 0, D, ee, re, te, oe, ne, ae;
+    m.__reactDisabledLog = !0;
     var V, ue, z = !1, G = new (typeof WeakMap == "function" ? WeakMap : Map)(), ye = Symbol.for("react.client.reference"), le, se = {}, ie = {}, ce = {};
     C.Fragment = Y, C.jsx = function(e, r, t, n, l) {
       return H(e, r, t, !1, n, l);
@@ -439,38 +439,38 @@ var ve;
 function Ne() {
   return ve || (ve = 1, process.env.NODE_ENV === "production" ? N.exports = Ce() : N.exports = ke()), N.exports;
 }
-var m = Ne();
+var _ = Ne();
 const Ae = ({ initialCount: c = 0, maxCount: v = 100 }) => {
-  const [f, g] = we(c), i = () => {
-    g((u) => Math.min(u + 1, v));
+  const [f, m] = we(c), i = () => {
+    m((u) => Math.min(u + 1, v));
   }, d = () => {
-    g((u) => Math.max(u - 1, 0));
+    m((u) => Math.max(u - 1, 0));
   };
-  return /* @__PURE__ */ m.jsx("div", { className: "ui", children: /* @__PURE__ */ m.jsxs("div", { className: "ui-bg-blue-500 ui-p-5 ui-rounded-2xl", children: [
-    /* @__PURE__ */ m.jsx("div", { children: f }),
-    /* @__PURE__ */ m.jsxs("div", { children: [
-      /* @__PURE__ */ m.jsx(
+  return /* @__PURE__ */ _.jsxs("div", { className: "bg-blue-500 p-5 rounded-2xl", children: [
+    /* @__PURE__ */ _.jsx("div", { children: f }),
+    /* @__PURE__ */ _.jsxs("div", { children: [
+      /* @__PURE__ */ _.jsx(
         "button",
         {
           onClick: d,
           disabled: f <= 0,
-          className: "ui-bg-red-700",
+          className: "bg-red-700",
           children: "Decrease"
         }
       ),
-      /* @__PURE__ */ m.jsx(
+      /* @__PURE__ */ _.jsx(
         "button",
         {
           onClick: i,
           disabled: f >= v,
-          className: "hover:ui-bg-green-500",
+          className: "hover:bg-green-500",
           id: "test-hover",
           children: "Increase"
         }
       )
     ] }),
-    /* @__PURE__ */ m.jsxs("div", { children: [
-      /* @__PURE__ */ m.jsx(
+    /* @__PURE__ */ _.jsxs("div", { children: [
+      /* @__PURE__ */ _.jsx(
         "input",
         {
           type: "number",
@@ -479,18 +479,18 @@ const Ae = ({ initialCount: c = 0, maxCount: v = 100 }) => {
           defaultValue: 1
         }
       ),
-      /* @__PURE__ */ m.jsx(
+      /* @__PURE__ */ _.jsx(
         "button",
         {
           onClick: () => {
             const u = document.querySelector("input");
-            u && f + Number(u.value) <= v && g((x) => x + Number(u.value));
+            u && f + Number(u.value) <= v && m((g) => g + Number(u.value));
           },
           children: "Add Custom Amount"
         }
       )
     ] })
-  ] }) });
+  ] });
 };
 export {
   Ae as CustomComponent
