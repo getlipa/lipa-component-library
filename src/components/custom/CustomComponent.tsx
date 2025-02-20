@@ -30,14 +30,14 @@ export const CustomComponent = ({initialCount = 0, maxCount = 100}: CustomCompon
                     >
                         Decrease
                     </button>
-                    {/*<button*/}
-                    {/*    onClick={increment}*/}
-                    {/*    disabled={count >= maxCount}*/}
-                    {/*    className="hover:ui-bg-green-500"*/}
-                    {/*    id="test-hover"*/}
-                    {/*>*/}
-                    {/*    Increase*/}
-                    {/*</button>*/}
+                    <button
+                        onClick={increment}
+                        disabled={count >= maxCount}
+                        className="hover:ui-bg-green-500"
+                        id="test-hover"
+                    >
+                        Increase
+                    </button>
                 </div>
 
                 <div>
