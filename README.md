@@ -1,50 +1,60 @@
-# React + TypeScript + Vite
+# Lipa Component Library
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This component library is a collection of all components that are needed to create our React web frontends. It is 
+published to GitHub and can be added to a project with `npm install github:getlipa/lipa-component-library#{tag}`.
+To publish a new version of the library use the `npm run build` and then push a new commit with a tag to GitHub.
 
-Currently, two official plugins are available:
+## Add a component
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To keep everything organised each component has its own folder inside the components folder. Each component folder 
+contains at least three files. First there is the component itself second there is a story file for the component to 
+showcase different stories of the component. And last ther is an `index.ts` to export the component to have the import 
+while using the library a lot easier.
 
-## Expanding the ESLint configuration
+Also notice when creating a new component to export the folder in the index.ts located in the `src` directory.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Storybook
 
-- Configure the top-level `parserOptions` property like this:
+To showcase all the components we are using Storybook. To have Stories for your component you need to have a file ending
+on `.stories.tsx`. In this file you need to define the metadata such as the `title`, `argTypes`, what component it is
+and so on. After that you can export all your different stories with what ever args you want.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Usage
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+To run Storybook use `npm run storybook`
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Backstop Js
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+To visually test all our stories we decided to use Backstop Js. With the viewports option in the
+[backstop.json](backstop.json) can define on what size of screens we want to have to render the components. And with the
+scenarios config we can define what component should how be tested. To use the components showcased from Storybook, we
+can use the iFrame url created by Storybook which is `http://localhost:6006/iframe.html?viewMode=story&id={component-title}--{story-name}}`.
+
+### Usage
+
+- Create a new reference snapshots `backstop:reference`
+- Test all scenarios against the reference snapshots `backstop:test`
+
+## Tailwind
+
+To not do the whole css on our own we are using Tailwind. This creates css classes for all possible customisation option
+ready to use, which we can then add to our components. With that if we want e.g. to give something a different 
+background we can just add the corresponding Tailwind generate class to it, which in this case could be `bg-red-500`. 
+
+### Headlessui
+
+Headlessui is a library for different "low level" components like dropdown menus, selection menus or other stuff that 
+requires JavaScript. We want to use it as it makes simple components like dropdown menus a lot easier and clean.
+
+### Tailwindui
+
+Tailwindui provides us with some already designed ui components that we can use and customise. Tailwindui gives us the 
+code for their component to copy to our project. With this approach it very easy to customise the components. Also 
+Tailwind makes use of Headlessui in some components.
+
+### Tailgrids
+
+Tailgrids is also a collection of pre designed components which can be copied to our own library different from 
+Tailwindui it does not use Headlessio which makes the component more blown up with JavaScript. So the usage of 
+Tailwindui components is preferred to Tailgrid components. Nevertheless, Tailgird has a huge collection of usefull 
+components to use.
