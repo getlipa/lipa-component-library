@@ -1,12 +1,21 @@
 import {useState} from 'react'
+import './CustomComponent.css'
+import {useEffect} from "react";
+import {logDeprecation} from "../../logDeprecations.ts";
 
 type CustomComponentProps = {
     initialCount?: number
     maxCount?: number
 }
 
+/**
+ * **Deprecated:** Use NewComponent instead
+ */
 export const CustomComponent = ({initialCount = 0, maxCount = 100}: CustomComponentProps) => {
     const [count, setCount] = useState(initialCount);
+    useEffect(() => {
+        logDeprecation('CustomComponent', 'NewComponent');
+    }, []);
 
     const increment = () => {
         setCount((prev) => Math.min(prev + 1, maxCount));
