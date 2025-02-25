@@ -22,5 +22,5 @@ export default defineConfig({
             external: Object.keys(peerDependencies),
             output: { globals: { react: 'React', 'react-dom': 'ReactDOM' } }
         }
-    },
+    }
 });

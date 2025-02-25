@@ -13,6 +13,12 @@ while using the library a lot easier.
 
 Also notice when creating a new component to export the folder in the index.ts located in the `src` directory.
 
+## Deprecate
+
+TODO
+
+Auch struktur machen
+
 ## Storybook
 
 To showcase all the components we are using Storybook. To have Stories for your component you need to have a file ending

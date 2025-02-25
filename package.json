@@ -20,23 +20,21 @@
     "dist"
   ],
   "scripts": {
-    "dev": "vite",
     "build": "tsc -b tsconfig.json && vite build && npm run build:css",
     "build:css": "tailwindcss -m -i ./src/tailwind-entry.css -o ./dist/styles.css",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "storybook": "concurrently 'npm run storybook:css' 'storybook dev -p 6006'",
-    "storybook:css": "tailwindcss -w -i ./src/tailwind-entry.css -o ./src/index.css",
-    "build-storybook": "concurrently 'npm run build-storybook:css' 'storybook build'",
-    "build-storybook:css": "tailwindcss -m -i ./src/tailwind-entry.css -o ./src/index.css",
-    "prepublishOnly": "npm run build",
-    "chromatic": "npx chromatic --project-token=chpt_f184d3698b010c1",
+    "storybook:dev": "concurrently 'npm run storybook:dev:css' 'storybook dev -p 6006'",
+    "storybook:dev:css": "tailwindcss -w -i ./src/tailwind-entry.css -o ./src/generated/index.css",
+    "storybook:build": "concurrently 'npm run storybook:build:css' 'storybook build'",
+    "storybook:build:css": "tailwindcss -m -i ./src/tailwind-entry.css -o ./src/index.css",
     "backstop:reference": "./node_modules/.bin/backstop reference",
-    "backstop:test": "./node_modules/.bin/backstop test"
+    "backstop:test": "./node_modules/.bin/backstop test",
+    "format": "prettier --write ./src",
+    "check": "prettier --check ./src"
   },
   "peerDependencies": {
-    "react": "^18.3.0",
-    "react-dom": "^18.3.0"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.4",
@@ -72,6 +70,7 @@
     ]
   },
   "dependencies": {
-    "backstopjs": "^6.3.25"
+    "backstopjs": "^6.3.25",
+    "prettier": "^2.7.1"
   }
 }

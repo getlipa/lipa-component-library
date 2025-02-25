@@ -1,1 +1,1 @@
-export { CustomComponent } from './components/CustomComponent'
+export { CustomComponent } from "./components/CustomComponent";

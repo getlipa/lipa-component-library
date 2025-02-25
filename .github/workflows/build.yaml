@@ -1,0 +1,46 @@
+name: Build React Library
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          # Checkout with fetch-depth of 0 to allow git commands
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build library
+        run: |
+          npm run build
+          # Create .gitignore file excluding dist folder
+          echo "/dist\n!dist/*" >> .gitignore
+
+      - name: Commit built files
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          
+          # Add dist folder contents
+          git add dist/
+          
+          # Only commit if there are changes
+          if git diff --cached --quiet ; then
+            echo "No changes in dist folder"
+          else
+            git commit -m "Automated build: Update dist folder"
+            git push origin main
+          fi
