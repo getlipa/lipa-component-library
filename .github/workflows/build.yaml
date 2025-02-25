@@ -2,7 +2,7 @@ name: Build React Library
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, Storybook ]
   pull_request:
     branches: [ main ]
 
@@ -18,19 +18,22 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '23'
 
       - name: Install dependencies
         run: npm ci
 
       - name: Build library
         run: |
+          npm run generate:css
+          ls -al
           npm run build
           # Create .gitignore file excluding dist folder
-          echo "/dist\n!dist/*" >> .gitignore
+          echo -e "!dist\n!dist/*" >> .gitignore
 
       - name: Commit built files
         run: |
+          cat .gitignore
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           
@@ -42,5 +45,5 @@ jobs:
             echo "No changes in dist folder"
           else
             git commit -m "Automated build: Update dist folder"
-            git push origin main
+            git push origin Storybook
           fi

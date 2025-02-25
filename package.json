@@ -22,6 +22,7 @@
   "scripts": {
     "build": "tsc -b tsconfig.json && vite build && npm run build:css",
     "build:css": "tailwindcss -m -i ./src/tailwind-entry.css -o ./dist/styles.css",
+    "generate:css": "tailwindcss -m -i ./src/tailwind-entry.css -o ./src/generated/index.css",
     "lint": "eslint .",
     "storybook:dev": "concurrently 'npm run storybook:dev:css' 'storybook dev -p 6006'",
     "storybook:dev:css": "tailwindcss -w -i ./src/tailwind-entry.css -o ./src/generated/index.css",
