@@ -6,21 +6,20 @@ jobs:
   check-commit:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
-          # Checkout with fetch-depth of 0 to allow git commands
+          ref: ${{ github.event.pull_request.head.ref || github.ref }}
           fetch-depth: 0
+          fetch-tags: true
       - name: Validate commit message
         run: |
-          COMMIT_MSG=$(git log --format=%B -n 1 ${{ github.sha }})
-          
-          git log
+          COMMIT_MSG=$(git log -1 --format=%B)
           
           echo ${COMMIT_MSG}
           
-#          REGEX="^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test)(?:\([a-zA-Z0-9]+\))?(?<breaking>!)?(?<subject>:\s.*)?(?:\n\n(?<body>.+))?(?:\n\n(?<footer>.+))?$"
-#          if ! echo ${{ github.event.head_commit.message }} | grep -PqE "$REGEX"; then
-#            echo "Commit message '$COMMIT_MSG' does not match the required format"
-#            echo "REGEX = $REGEX"
-#            exit 1
-#          fi
+          REGEX="^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test)(?:\([a-zA-Z0-9]+\))?(?<breaking>!)?(?<subject>:\s.*)?(?:\n\n(?<body>.+))?(?:\n\n(?<footer>.+))?$"
+          if ! echo $COMMIT_MSG | grep -PqE "$REGEX"; then
+            echo "Commit message '$COMMIT_MSG' does not match the required format"
+            echo "REGEX = $REGEX"
+            exit 1
+          fi
