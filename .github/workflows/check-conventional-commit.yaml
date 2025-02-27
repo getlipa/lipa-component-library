@@ -7,6 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          # Checkout with fetch-depth of 0 to allow git commands
+          fetch-depth: 0
       - name: Validate commit message
         run: |
           COMMIT_MSG=$(git log --format=%B -n 1 ${{ github.sha }})
