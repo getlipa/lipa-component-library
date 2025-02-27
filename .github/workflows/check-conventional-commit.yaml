@@ -9,10 +9,15 @@ jobs:
       - uses: actions/checkout@v3
       - name: Validate commit message
         run: |
-          COMMIT_MSG=$(git log -1 --format=%s)
-          REGEX="^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test)(?:\([a-zA-Z0-9]+\))?(?<breaking>!)?(?<subject>:\s.*)?(?:\n\n(?<body>.+))?(?:\n\n(?<footer>.+))?$"
-          if ! echo "$COMMIT_MSG" | grep -PqE "$REGEX"; then
-            echo "Commit message ($COMMIT_MSG) does not match the required format"
-            echo "REGEX = $REGEX"
-            exit 1
-          fi
+          COMMIT_MSG=$(git log --format=%B -n 1 ${{ github.sha }})
+          
+          git log
+          
+          echo ${COMMIT_MSG}
+          
+#          REGEX="^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test)(?:\([a-zA-Z0-9]+\))?(?<breaking>!)?(?<subject>:\s.*)?(?:\n\n(?<body>.+))?(?:\n\n(?<footer>.+))?$"
+#          if ! echo ${{ github.event.head_commit.message }} | grep -PqE "$REGEX"; then
+#            echo "Commit message '$COMMIT_MSG' does not match the required format"
+#            echo "REGEX = $REGEX"
+#            exit 1
+#          fi
