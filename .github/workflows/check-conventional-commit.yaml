@@ -9,17 +9,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.ref || github.ref }}
-          fetch-depth: 0
+          fetch-depth: ${{ github.event.pull_request.commits }}
           fetch-tags: true
-      - name: Validate commit message
-        run: |
-          COMMIT_MSG=$(git log -1 --format=%B)
-          
-          echo ${COMMIT_MSG}
-          
-          REGEX="^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test)(?:\([a-zA-Z0-9]+\))?(?<breaking>!)?(?<subject>:\s.*)?(?:\n\n(?<body>.+))?(?:\n\n(?<footer>.+))?$"
-          if ! echo $COMMIT_MSG | grep -PqE "$REGEX"; then
-            echo "Commit message '$COMMIT_MSG' does not match the required format"
-            echo "REGEX = $REGEX"
-            exit 1
-          fi
+      - name: Conventional commit check
+        uses: cocogitto/cocogitto-action@v3
