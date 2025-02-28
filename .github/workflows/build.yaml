@@ -1,18 +1,13 @@
 name: Build React Library
-
 on:
   push:
     branches: [ main, Storybook ]
-  pull_request:
-    branches: [ main ]
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
-          # Checkout with fetch-depth of 0 to allow git commands
           fetch-depth: 0
 
       - name: Setup Node.js
@@ -29,7 +24,7 @@ jobs:
           ls -al
           npm run build
           # Create .gitignore file excluding dist folder
-          echo -e "!dist\n!dist/*" >> .gitignore
+          echo -e "\n!dist\n!dist/*" >> .gitignore
 
       - name: Commit built files
         run: |
@@ -44,6 +39,24 @@ jobs:
           if git diff --cached --quiet ; then
             echo "No changes in dist folder"
           else
-            git commit -m "Automated build: Update dist folder"
+            git commit -m "chore: Automated build: Update dist folder"
             git push origin Storybook
           fi
+
+  version-tag:
+    needs: build
+    if: needs.build.result == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: prepare
+        run: | 
+          echo "ignore_merge_commits = true" > cog.toml
+      - name: Create Version Tag
+        uses: cocogitto/cocogitto-action@v3
+        with:
+          release: true
+          git-user: 'Cocogitto bot'
+          check-latest-tag-only: true

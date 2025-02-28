@@ -26,3 +26,6 @@ dist
 
 # Custom generated
 src/generated
+
+# cocogitto config
+cog.toml
