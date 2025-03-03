@@ -24,16 +24,16 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const From0: Story = {
+export const from0: Story = {
 };
 
-export const MaxCount10: Story = {
+export const maxCount10: Story = {
     args: {
         maxCount: 10,
     },
 };
 
-export const MaxCount50StartingAt30: Story = {
+export const maxCount50StartingAt30: Story = {
     args: {
         maxCount: 50,
         initialCount: 30,
