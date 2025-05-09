@@ -3,6 +3,7 @@ on:
   pull_request:
     types: [opened, synchronize]
 jobs:
+
   check-commit:
     runs-on: ubuntu-latest
     steps:
@@ -13,6 +14,7 @@ jobs:
           fetch-tags: true
       - name: Conventional commit check
         uses: cocogitto/cocogitto-action@v3
+
   visual-tests:
     runs-on: ubuntu-latest
     steps:
@@ -20,7 +22,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ref: ci/Storybook-visual-tests-in-pipeline
+          ref: Storybook
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -63,7 +65,7 @@ jobs:
         with:
           name: backstop-reference
           path: backstop_data/bitmaps_reference
-          
+
       - name: Install dependencies
         run: |
           npm ci
@@ -82,6 +84,54 @@ jobs:
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: backstop-report
           path: backstop_data
+
+  upload-test-report:
+    needs: visual-tests
+    runs-on: ubuntu-latest
+    if: ${{ always() }}
+    steps:
+      - name: Download artifact on new branch
+        uses: actions/download-artifact@v4
+        with:
+          name: backstop-report
+          path: backstop_data
+
+      - name: Prepare report for GitHub Pages
+        run: |
+          mkdir -p report-build
+          cp -r backstop_data report-build/
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./report-build
+          publish_branch: gh-pages
+          destination_dir: reports/${{ github.ref_name }}
+
+      - name: Comment report link to PR
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const branchName = '${{ github.ref_name }}';
+            const reportUrl = `https://${context.repo.owner}.github.io/${context.repo.repo}/reports/${branchName}/`;
+  
+            const jobStatus = '${{ needs.visual-tests.result }}';
+            let commentMessage = '';
+  
+            if (jobStatus === 'success') {
+              commentMessage = `🧪  The visual tests succeeded. See visual test report for \`${branchName}\`: [View Report](${reportUrl}/backstop_data/html_report/)`;
+            } else if (jobStatus === 'failure') {
+              commentMessage = `❌  The visual tests failed. ONLY MERGE THE PR IF THE UPDATED COMPONENTS ARE AS EXPECTED. See visual test report for \`${branchName}\`: [View Report](${reportUrl}/backstop_data/html_report/)`;
+            }
+  
+            await github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: commentMessage
+            });
