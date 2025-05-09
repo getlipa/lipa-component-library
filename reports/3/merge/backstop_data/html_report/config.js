@@ -4,7 +4,7 @@ report({
     {
       "pair": {
         "reference": "../bitmaps_reference/backstop_default_From_Zero_0_document_0_phone.png",
-        "test": "../bitmaps_test/20250509-093341/backstop_default_From_Zero_0_document_0_phone.png",
+        "test": "../bitmaps_test/20250509-093717/backstop_default_From_Zero_0_document_0_phone.png",
         "selector": "document",
         "fileName": "backstop_default_From_Zero_0_document_0_phone.png",
         "label": "From Zero",
@@ -21,16 +21,16 @@ report({
           },
           "rawMisMatchPercentage": 1.1145833333333335,
           "misMatchPercentage": "1.11",
-          "analysisTime": 47
+          "analysisTime": 43
         },
-        "diffImage": "../bitmaps_test/20250509-093341/failed_diff_backstop_default_From_Zero_0_document_0_phone.png"
+        "diffImage": "../bitmaps_test/20250509-093717/failed_diff_backstop_default_From_Zero_0_document_0_phone.png"
       },
       "status": "fail"
     },
     {
       "pair": {
         "reference": "../bitmaps_reference/backstop_default_From_Zero_0_document_1_tablet.png",
-        "test": "../bitmaps_test/20250509-093341/backstop_default_From_Zero_0_document_1_tablet.png",
+        "test": "../bitmaps_test/20250509-093717/backstop_default_From_Zero_0_document_1_tablet.png",
         "selector": "document",
         "fileName": "backstop_default_From_Zero_0_document_1_tablet.png",
         "label": "From Zero",
@@ -47,16 +47,16 @@ report({
           },
           "rawMisMatchPercentage": 0.21769205729166666,
           "misMatchPercentage": "0.22",
-          "analysisTime": 70
+          "analysisTime": 56
         },
-        "diffImage": "../bitmaps_test/20250509-093341/failed_diff_backstop_default_From_Zero_0_document_1_tablet.png"
+        "diffImage": "../bitmaps_test/20250509-093717/failed_diff_backstop_default_From_Zero_0_document_1_tablet.png"
       },
       "status": "fail"
     },
     {
       "pair": {
         "reference": "../bitmaps_reference/backstop_default_From_30_0_document_0_phone.png",
-        "test": "../bitmaps_test/20250509-093341/backstop_default_From_30_0_document_0_phone.png",
+        "test": "../bitmaps_test/20250509-093717/backstop_default_From_30_0_document_0_phone.png",
         "selector": "document",
         "fileName": "backstop_default_From_30_0_document_0_phone.png",
         "label": "From 30",
@@ -73,16 +73,16 @@ report({
           },
           "rawMisMatchPercentage": 1.1145833333333335,
           "misMatchPercentage": "1.11",
-          "analysisTime": 44
+          "analysisTime": 48
         },
-        "diffImage": "../bitmaps_test/20250509-093341/failed_diff_backstop_default_From_30_0_document_0_phone.png"
+        "diffImage": "../bitmaps_test/20250509-093717/failed_diff_backstop_default_From_30_0_document_0_phone.png"
       },
       "status": "fail"
     },
     {
       "pair": {
         "reference": "../bitmaps_reference/backstop_default_From_30_0_document_1_tablet.png",
-        "test": "../bitmaps_test/20250509-093341/backstop_default_From_30_0_document_1_tablet.png",
+        "test": "../bitmaps_test/20250509-093717/backstop_default_From_30_0_document_1_tablet.png",
         "selector": "document",
         "fileName": "backstop_default_From_30_0_document_1_tablet.png",
         "label": "From 30",
@@ -99,16 +99,16 @@ report({
           },
           "rawMisMatchPercentage": 0.21769205729166666,
           "misMatchPercentage": "0.22",
-          "analysisTime": 56
+          "analysisTime": 59
         },
-        "diffImage": "../bitmaps_test/20250509-093341/failed_diff_backstop_default_From_30_0_document_1_tablet.png"
+        "diffImage": "../bitmaps_test/20250509-093717/failed_diff_backstop_default_From_30_0_document_1_tablet.png"
       },
       "status": "fail"
     },
     {
       "pair": {
         "reference": "../bitmaps_reference/backstop_default_From_30_0_document_0_phone.png",
-        "test": "../bitmaps_test/20250509-093341/backstop_default_From_30_0_document_0_phone.png",
+        "test": "../bitmaps_test/20250509-093717/backstop_default_From_30_0_document_0_phone.png",
         "selector": "document",
         "fileName": "backstop_default_From_30_0_document_0_phone.png",
         "label": "From 30",
@@ -127,14 +127,14 @@ report({
           "misMatchPercentage": "1.11",
           "analysisTime": 27
         },
-        "diffImage": "../bitmaps_test/20250509-093341/failed_diff_backstop_default_From_30_0_document_0_phone.png"
+        "diffImage": "../bitmaps_test/20250509-093717/failed_diff_backstop_default_From_30_0_document_0_phone.png"
       },
       "status": "fail"
     },
     {
       "pair": {
         "reference": "../bitmaps_reference/backstop_default_From_30_0_document_1_tablet.png",
-        "test": "../bitmaps_test/20250509-093341/backstop_default_From_30_0_document_1_tablet.png",
+        "test": "../bitmaps_test/20250509-093717/backstop_default_From_30_0_document_1_tablet.png",
         "selector": "document",
         "fileName": "backstop_default_From_30_0_document_1_tablet.png",
         "label": "From 30",
@@ -151,9 +151,9 @@ report({
           },
           "rawMisMatchPercentage": 0.21769205729166666,
           "misMatchPercentage": "0.22",
-          "analysisTime": 35
+          "analysisTime": 43
         },
-        "diffImage": "../bitmaps_test/20250509-093341/failed_diff_backstop_default_From_30_0_document_1_tablet.png"
+        "diffImage": "../bitmaps_test/20250509-093717/failed_diff_backstop_default_From_30_0_document_1_tablet.png"
       },
       "status": "fail"
     }
