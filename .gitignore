@@ -29,3 +29,6 @@ src/generated
 
 # cocogitto config
 cog.toml
+
+# backstoop data
+backstop_data

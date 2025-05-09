@@ -15,13 +15,18 @@
   "scenarios": [
     {
       "label": "From Zero",
-      "delay": 1000,
-      "url": "http://localhost:6006/iframe.html?viewMode=story&id=test-customcomponent--from-0"
+      "url": "http://localhost:6006/iframe.html?viewMode=story&id=test-customcomponent--from-0",
+      "readySelector": "#wait-for-me"
     },
     {
       "label": "From 30",
-      "delay": 1000,
-      "url": "http://localhost:6006/iframe.html?viewMode=story&id=test-customcomponent--max-count-50-starting-at-30"
+      "url": "http://localhost:6006/iframe.html?viewMode=story&id=test-customcomponent--max-count-50-starting-at-30",
+      "readySelector": "#wait-for-me"
+    },
+    {
+      "label": "From 30",
+      "url": "http://localhost:6006/iframe.html?viewMode=story&id=test-customcomponent--max-count-50-starting-at-30",
+      "readySelector": "#wait-for-me"
     }
   ],
   "paths": {
@@ -31,7 +36,7 @@
     "html_report": "backstop_data/html_report",
     "ci_report": "backstop_data/ci_report"
   },
-  "report": ["browser"],
+  "report": ["ci"],
   "engine": "puppeteer",
   "engineOptions": {
     "args": ["--no-sandbox"]

@@ -29,7 +29,7 @@ export const CustomComponent = ({
   };
 
   return (
-    <div className="bg-blue-500 p-5 rounded-2xl">
+    <div className="bg-blue-500 p-5 rounded-2xl" id="wait-for-me">
       <div>{count}</div>
       <div>
         <button
