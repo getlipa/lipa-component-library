@@ -118,7 +118,7 @@ jobs:
         with:
           script: |
             const branchName = '${{ github.ref_name }}';
-            const reportUrl = `https://${context.repo.owner}.github.io/${context.repo.repo}/reports/${branchName}/`;
+            const reportUrl = `https://${context.repo.owner}.github.io/${context.repo.repo}/reports/${branchName}`;
   
             const jobStatus = '${{ needs.visual-tests.result }}';
             let commentMessage = '';
