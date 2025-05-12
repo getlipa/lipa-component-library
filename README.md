@@ -4,6 +4,9 @@ This component library is a collection of all components that are needed to crea
 published to GitHub and can be added to a project with `npm install github:getlipa/lipa-component-library#{tag}`.
 To publish a new version of the library use the `npm run build` and then push a new commit with a tag to GitHub.
 
+This Library on the `main` branch is currently used by [webinvoice-ui](https://gitlab.com/getlipa/web/webinvoice-ui/).
+But there is a new version with Storybook for preview of the components and backstopJS for visual tests on the `new` branch
+
 ## Add a component
 
 To keep everything organised each component has its own folder inside the components folder. Each component folder 
@@ -15,9 +18,13 @@ Also notice when creating a new component to export the folder in the index.ts l
 
 ## Deprecate
 
-TODO
-
-Auch struktur machen
+To mark a component as deprecated just ad the following useEffect to the component and it will log a message when the
+deprecated component is rendered
+```typescript jsx
+useEffect(() => {
+  logDeprecation("OldComponent", "NewComponent");
+}, []);
+```
 
 ## Storybook
 
