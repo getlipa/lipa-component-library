@@ -1,7 +1,7 @@
 name: Build React Library
 on:
   push:
-    branches: [ main, Storybook ]
+    branches: [ new ]
 jobs:
   build:
     runs-on: ubuntu-latest
