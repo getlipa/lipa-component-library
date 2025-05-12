@@ -1,8 +1,4 @@
-# React + Vite
+# Lipa Component Library
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This Library on the `main` branch is currently used by [webinvoice-ui](https://gitlab.com/getlipa/web/webinvoice-ui/). 
+But there is a new version with Storybook for preview of the components and backstopJS for visual tests on the `new` branch
